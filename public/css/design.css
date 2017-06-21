@@ -1,0 +1,344 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body, #app {
+    margin:0;
+    padding:0;
+    height:100%;
+
+    background-color: #F9F9F9;
+    font-family: 'Raleway', sans-serif;
+    font-size:14px;
+}
+
+a {
+    color:rgba(229,56,53,1);
+    text-decoration: none;
+    border-bottom:1px dotted rgba(229,56,53,1);
+}
+a:hover {
+    color:rgba(198,40,40,1);
+    border-bottom:1px dotted transparent;
+}
+
+body {
+    overflow-x: hidden;
+}
+#app {
+    display: flex;
+    width:130%;
+    overflow-x: hidden;
+}
+
+.Information {
+    background-color: #ffffff;
+    border-right:6px solid rgba(0, 0 , 0, 0.1);
+
+    transition: .3s transform;
+
+    width:30%;
+    transform: translateX(-100%);
+
+    display: flex;
+    flex-direction: column;
+}
+.Information .InformationTitle {
+    flex-shrink: 0;
+    display: flex;
+    box-shadow:0px 1px 2px rgba(0, 0, 0, 0.03);
+    flex-direction: column-reverse;
+}
+.Information .InformationTitle h1 {
+    flex-grow: 1;
+    margin:0;
+    padding:15px;
+
+    color:rgba(0, 0, 0, 0.8);
+    font-weight:400;
+}
+.Information .InformationTitle a.Button {
+    flex-shrink:1;
+
+    background: rgba(229,56,53,1);
+    background: -moz-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(229,56,53,1)), color-stop(100%, rgba(198,40,40,1)));
+    background: -webkit-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -o-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -ms-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: linear-gradient(to right, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53835', endColorstr='#c62828', GradientType=1 );
+
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:1.3rem;
+    padding:20px 30px;
+}
+
+.Information .Content {
+    padding:15px;
+    overflow-y: scroll;
+}
+.Information .Content h3 {
+    color:rgba(229,56,53,1);
+    font-weight:400;
+    font-size:1.4rem;
+    margin:0;
+    margin-bottom:10px;
+    margin-top:30px;
+    padding-bottom:0px;
+
+}
+.Information .Content p {
+    font-size:0.9rem;
+    line-height: 1.4rem;
+    text-align: justify;
+    
+}
+.Information .Content .code {
+    margin-left:10px;
+    font-size:1rem;
+}
+
+.Information .Content table {
+    width:100%;
+}
+.Information .Content table th, .Information .Content table td {
+    text-align: left;
+    padding:10px 0px;
+    border-bottom:1px solid rgba(0, 0, 0, 0.05);
+    width:50%;
+}
+
+.Information .Content .code pre {
+    border:1px solid rgba(0, 0, 0, 0.05);
+    border-left:3px solid rgba(0, 0, 0, 0.1);
+    padding:10px;
+    padding-left:20px;
+    font-size:0.8rem;
+}
+.Information .Content .code pre:hover {
+    border-left:3px solid rgba(229,56,53,1);
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+
+    width:100%;
+    transition: .3s transform;
+    transform: translateX(-30%);
+}
+
+.Information.is-open {
+    transform: translateX(0%);
+}
+.Information.is-open ~ .App {
+    opacity:0.05;
+    transform: translateX(0%);
+}
+
+.App .Navigation {
+    flex:1;
+    display: flex;
+    flex-direction: row;
+
+    background-color: #ffffff;
+    box-shadow:0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    align-items:center;
+    padding:0px;
+}
+
+.Navigation .Logo {
+    background: rgba(229,56,53,1);
+    background: -moz-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(229,56,53,1)), color-stop(100%, rgba(198,40,40,1)));
+    background: -webkit-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -o-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -ms-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: linear-gradient(to right, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53835', endColorstr='#c62828', GradientType=1 );
+
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:1.3rem;
+    padding:22px;
+}
+.Navigation .Title {
+    flex-grow: 1;
+    padding:10px;
+    padding-bottom:0px;
+    margin:0px;
+}
+
+.Title h1 {
+    margin:0;
+    padding:0;
+
+    color:rgba(229,56,53,1);
+    font-weight: 400;
+    font-size:2.0rem;
+    display: inline;
+    line-height:2rem;
+}
+.Title h3 {
+    margin:0;
+    margin-left:10px;
+    padding:0;
+
+    color:rgba(0, 0, 0, 0.2);
+    font-weight:400;
+    font-size: 1rem;
+    display: inline;
+
+}
+
+
+/*
+Content area
+*/
+.App .Content {
+    flex:11;
+    display: flex;
+    flex-direction:column;
+}
+
+
+.Content .Emoji, .Content .Message {
+    flex:2;
+    text-align: center;
+}
+.Content .Emoji,
+.Content .Message {
+    display: none;
+}
+.Content .Emoji.is-open {
+    display: block;
+}
+.Content .Message.is-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Content .Message p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 2rem;
+}
+.Content .Emoji p {
+    font-size:160px;
+    line-height: 1rem;
+}
+
+.Content .Emoji ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+.Content .Emoji ul li.hidden {
+    display:none;
+}
+.Content .Emoji ul li {
+    display: block;
+}
+
+.Content .Questions {
+    flex:1;
+    display: none;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+}
+.Content .Questions.is-open {
+    display: flex;
+}
+
+.Content .Questions form {
+    display: inline;
+}
+.Content .Questions .Input {
+    margin-right:0px;
+    margin-bottom:30px;
+}
+.Content .Questions .Input label {
+    display: block;
+    margin-bottom:15px;
+
+    color: rgba(0, 0, 0, 0.7);
+    font-size:1.3rem;
+}
+.Content .Questions .Input input {
+    padding:15px;
+
+    color:rgba(229,56,53,1);
+
+    border:0px;
+    border-radius:3px;
+    background: #ffffff;
+    box-shadow:0px 2px 2px rgba(0, 0, 0, 0.1);
+    font-size:2rem;
+    font-family: 'Raleway', sans-serif;
+}
+.Content .Questions .Input input:focus {
+    outline:0;
+}
+/*
+@todo ovo srediti
+*/
+.Content .Questions .Input input::-moz-placeholder,
+.Content .Questions .Input input::-webkit-input-placeholder,
+.Content .Questions .Input input::-ms-input-placeholder {
+    color:red;
+}
+
+.Content .Questions .Button {
+    margin-top:56px;
+}
+.Content .Questions .Button a {
+    font-size:1.4rem;
+    background: rgba(229,56,53,1);
+    background: -moz-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(229,56,53,1)), color-stop(100%, rgba(198,40,40,1)));
+    background: -webkit-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -o-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: -ms-linear-gradient(left, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    background: linear-gradient(to right, rgba(229,56,53,1) 0%, rgba(198,40,40,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53835', endColorstr='#c62828', GradientType=1 );
+
+    border-radius:3px;
+    box-shadow:0px 2px 2px rgba(0, 0, 0, 0.1);
+
+
+    color: #fff;
+    text-decoration: none;
+    padding:20px 35px;
+    transition: .3s all;
+}
+.Content .Questions .Button a:hover {
+    border-radius:5rem;
+}
+
+
+@media (min-width: 600px) {
+
+    .Information {
+        width: 30%;
+    }
+    .Content .Questions {
+        flex:1;
+        display: none;
+        flex-direction: row;
+        align-items:flex-start;
+        justify-content: center;
+    }
+    .Content .Questions .Input {
+        margin-right:30px;
+        margin-bottom:0px;
+    }
+    .Information .InformationTitle {
+        flex-direction: row;
+    }
+}
