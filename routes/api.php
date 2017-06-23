@@ -13,5 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('api')->get('/emoji', 'ApiController@all');
-Route::middleware('api')->get('/emoji/{emoji_id}', 'ApiController@show');
+Route::middleware('api')->get('v1/emoji', 'ApiController@all');
+Route::middleware('api')->get('v1/emoji/{emoji_id}', 'ApiController@show');

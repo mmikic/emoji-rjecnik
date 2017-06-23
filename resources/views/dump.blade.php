@@ -7,7 +7,7 @@
 
             <div class="Icon">
 
-                <img src="{{ asset('img/apple/160/'.$emoji->unified.'.png') }}" alt="Emoji">
+                <img src="{{ asset('img/apple/160/'.strtolower($emoji->unified).'.png') }}" alt="Emoji">
                 <div>
                     <br>
                     <strong>{{ $emoji->name }}</strong>
