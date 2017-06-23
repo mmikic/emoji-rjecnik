@@ -322,6 +322,45 @@ Content area
 }
 
 
+.HTMLContainer {
+    overflow-y: scroll;
+}
+.Dump {
+    display:flex;
+    width:80%;
+    margin:0 auto;
+    border-bottom: 2px solid #EFEFEF;
+    padding:20px 0px;
+}
+.Dump .Icon {
+    flex:1;
+    text-align: center;
+}
+.Dump .Icon img {
+    width:80px;
+}
+.Dump .Icon strong {
+    color:rgba(0, 0, 0, 0.5);
+}
+.Dump .Definition {
+    flex:2;
+    display: flex;
+}
+.Dump .Definition ul {
+    list-style-type:none;
+}
+.Dump .Definition ul li {
+    margin-bottom:10px;
+}
+.Dump .Definition .Semantic {
+    flex:1;
+}
+.Dump .Definition .Pragmatic {
+
+    flex:1;
+}
+
+
 @media (min-width: 600px) {
 
     .Information {

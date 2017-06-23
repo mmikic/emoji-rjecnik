@@ -16,14 +16,10 @@ class AppController extends Controller
 
         $data = [
             'emojis'        => $this->surveyEmojis(),
-            'stats'         => [
-                'emojis'        => Emoji::count(),
-                'semantics'     => Definition::where('semantic', '!=', '')->count(),
-                'pragmatics'    => Definition::where('pragmatic', '!=', '')->count()
-            ]
+            'stats'         => $this->getStats()
         ];
 
-        return view('app', $data);
+        return view('front', $data);
 
     }
 
@@ -31,6 +27,18 @@ class AppController extends Controller
     {
 
         return $this->surveyEmojis();
+
+    }
+
+    public function dumpDB()
+    {
+
+        $data = [
+            'emojis'        => Emoji::with('definitions')->has('definitions')->get(),
+            'stats'         => $this->getStats()
+        ];
+
+        return view('dump', $data);
 
     }
 
@@ -88,6 +96,15 @@ class AppController extends Controller
 
         }
 
+    }
+
+    private function getStats()
+    {
+        return [
+            'emojis'        => Emoji::count(),
+            'semantics'     => Definition::where('semantic', '!=', '')->count(),
+            'pragmatics'    => Definition::where('pragmatic', '!=', '')->count()
+        ];
     }
 
 }

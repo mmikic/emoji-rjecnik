@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('api')->get('/emoji', 'ApiController@all');
+Route::middleware('api')->get('/emoji/{emoji_id}', 'ApiController@show');

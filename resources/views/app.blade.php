@@ -82,14 +82,26 @@ Content-Type: application/json</pre>
 
                     <p><strong>HTTP response</strong></p>
                     <pre>[{
-    "emoji_id": 73,
-    "semantic": "smijeh",
-    "pragmatic": "hahahah"
+    "emoji_id": 76,
+    "semantic": "lubenica",
+    "pragmatic": "ljeto",
+    "emoji": {
+        "id": 76,
+        "name": "WATERMELON",
+        "unified": "1F349",
+        "short": "watermelon"
+    }
 },
 {
-    "emoji_id": 73,
-    "semantic": "smiješko",
-    "pragmatic": "umirem od smijeha"
+    "emoji_id": 76,
+    "semantic": "melona",
+    "pragmatic": "slatko",
+    "emoji": {
+        "id": 76,
+        "name": "WATERMELON",
+        "unified": "1F349",
+        "short": "watermelon"
+    }
 }]</pre>
                     </div>
 
@@ -114,41 +126,7 @@ Content-Type: application/json</pre>
                 </div>
                 <div class="Content">
 
-                    <div class="Emoji" :class="{ 'is-open': app.active }">
-                        <p></p>
-                    </div>
-                    <div class="Message" :class="{ 'is-open': (app.active == false) }">
-                        <p>
-                            <img src="img/apple/160/1f389.png" alt="Bravo" width="80px" height="80px"><br><br>
-                            Hvala na sudjelovanju!<br>
-                            Tvoji podaci su pohranjeni.
-                        </p>
-                    </div>
-                    <div class="Questions" :class="{ 'is-open': app.active }">
-
-                        <div class="Input">
-                            <label for="">Što je prikazano na slici?</label>
-                            <input type="text" v-model="semantic" id="semantic" placeholder="obavezno*">
-                        </div>
-                        <div class="Input">
-                            <form @submit.prevent="nextEmoji">
-                                <label for="">Što označava taj <em>emoji</em>?</label>
-                                <input type="text" v-model="pragmatic" id="pragmatic" placeholder="(proizvoljno)">
-                            </form>
-                        </div>
-                        <div class="Button is-md-hidden">
-                            <label for="#">&nbsp;</label>
-                            <a href="#" @click.prevent="nextEmoji">Nastavi</a>
-                        </div>
-
-                    </div>
-
-                    <div class="Questions" :class="{ 'is-open': (app.active == false) }">
-                        <div class="Button">
-                            <label for="#">&nbsp;</label>
-                            <a href="#" @click.prevent="restart">Novi ciklus</a>
-                        </div>
-                    </div>
+                    @yield('content')
 
                 </div>
 
@@ -156,30 +134,7 @@ Content-Type: application/json</pre>
 
         </div>
 
-        <script>
-            window.emojis = {!! $emojis !!};
-        </script>
-        <script src="{{ asset('js/emoji.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script>
-
-            document.addEventListener('DOMContentLoaded', function() {
-
-                /*var code = ':' + document.querySelector('.Emoji > p').innerHTML + ':';
-
-                var emoji = new EmojiConvertor();
-                    emoji.init_env();
-
-                    emoji.img_sets.google.path = 'img/google/128/';
-                    emoji.img_set = 'google';
-                    emoji.use_sheet = false;
-                    emoji.replace_mode = 'img';
-
-                    document.querySelector('.Emoji > p').innerHTML = emoji.replace_colons(code);*/
-
-            });
-
-        </script>
+        @yield('script')
 
     </body>
 </html>
