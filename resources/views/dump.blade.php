@@ -12,7 +12,6 @@
                     <br>
                     <strong>{{ $emoji->name }}</strong>
                 </div>
-
             </div>
             <div class="Definition">
                 <div class="Semantic">

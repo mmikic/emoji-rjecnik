@@ -27,7 +27,10 @@
 
                 <div class="Content">
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam exercitationem explicabo fugit porro? Esse facere nesciunt obcaecati unde vitae. Blanditiis, dignissimos ea fugit illo mollitia possimus quisquam quos recusandae rerum?</p>
+                    <p>Emoji-rječnik nastao je u okviru kolegija Računalni gramatički modeli na Odsjeku za informacijske i komunikacijske znanosti Filozofskog fakulteta Sveučilišta u Zagrebu tijekom akademske godine 2016/2017. pod mentorstvom dr. sc. Sanje Seljan.</p>
+                    <p>Budući da se emojiji kao poseban jezični fenomen koriste diljem svijeta i budući da je njihova uporaba uvjetovana sociološki i kulturološki, ovaj rječnik nastoji najčešće korištenih 300 emojija definirati i objasniti s pomoću informacija prikupljenih od hrvatskih korisnika. Cilj je prikupljanje konkretnih naziva emojija te značenjâ emojija s obzirom na kontekst korisnikove uporabe (pragmatička definicija).</p>
+
+                    <p>Autori: <a href="mailto:mamatije@ffzg.hr">Maja Matijević</a> i <a href="mailto:marimiki@ffzg.hr">Mario Mikić</a></p>
 
                     <h3>Statistika</h3>
                     <table>
@@ -36,17 +39,17 @@
                             <td>{{ $stats['emojis'] }}</td>
                         </tr>
                         <tr>
-                            <th>Semantičkih def.</th>
+                            <th>Naziva</th>
                             <td>{{ $stats['semantics'] }}</td>
                         </tr>
                         <tr>
-                            <th>Pragmatičkih def.</th>
+                            <th>Pragmatičkih definicija</th>
                             <td>{{ $stats['pragmatics'] }}</td>
                         </tr>
                     </table>
 
                     <h3>Pristup podacima</h3>
-                    <p>Pristup podacima trenutno nije omogućen putem grafičkog sučelja kako bi se prevenirao bias ispitanika. Međutim podacima je moguće pristupiti putem API-ja aplikacije</p>
+                    <p>Pristup podacima trenutno nije omogućen putem grafičkog sučelja kako bi se prevenirao bias ispitanika. Međutim podacima je moguće pristupiti putem API-ja aplikacije.</p>
 
                     <strong>Popis <em>emojija</em></strong>
                     <div class="code">
